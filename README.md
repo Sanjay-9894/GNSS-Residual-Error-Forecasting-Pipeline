@@ -24,3 +24,8 @@ Data Ingestion & Preparation: Collect and preprocess satellite error data.
 Temporal Regularization: Convert erratic series into uniformly spaced samples using interpolation.
 Cleaning & Normalization: Remove missing values, apply scaling to stabilize training.
 
+
+![ATR vs X Error](plots/x_error_vs_ATR_x_error.jpg)
+![Train vs Test vs XGBoost](plots/Train_vs_Test_vs_XG_Boost.jpg)
+![RSI Analysis](plots/x_error_vs_RSI_x_error.jpg)
+
