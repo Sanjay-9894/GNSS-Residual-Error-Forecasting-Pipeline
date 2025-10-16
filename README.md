@@ -1,12 +1,12 @@
 # GNSS Residual Error Forecasting Pipeline
 
-#Project Overview
+Project Overview
 This repository demonstrates an AIML-driven approach to predict time-varying GNSS (Global Navigation Satellite System) errors in satellite clock and ephemeris values. Developed for Smart India Hackathon 2025, the goal is to reliably forecast x, y, z, and clock residual errors over short to medium time frames, greatly enhancing correction capabilities for navigation satellites.​
 
-#Problem Statement
+Problem Statement
 GNSS positioning accuracy is significantly affected by residual errors, resulting from discrepancies in satellite clock and ephemeris modeling. Accurate, timely forecasts of these residuals increase reliability and enable robust position corrections, improving end-user navigation performance.
 
-#Proposed Solution
+Proposed Solution
 
 Key Features:
 Reliable Data Transformation: Irregular GNSS error data is converted into smooth, uniform time series.
