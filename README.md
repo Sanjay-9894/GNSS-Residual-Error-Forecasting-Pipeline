@@ -1,31 +1,36 @@
 # GNSS Residual Error Forecasting Pipeline
 
-Project Overview
-This repository demonstrates an AIML-driven approach to predict time-varying GNSS (Global Navigation Satellite System) errors in satellite clock and ephemeris values. Developed for Smart India Hackathon 2025, the goal is to reliably forecast x, y, z, and clock residual errors over short to medium time frames, greatly enhancing correction capabilities for navigation satellites.​
+## Project Overview
+This project develops an AI/ML pipeline to forecast time-varying residual errors in satellite navigation data, specifically satellite clock and ephemeris parameters affecting GNSS accuracy. The solution smooths and models irregular data using ensemble methods for reliable prediction up to 24 hours ahead.
 
-Problem Statement
-GNSS positioning accuracy is significantly affected by residual errors, resulting from discrepancies in satellite clock and ephemeris modeling. Accurate, timely forecasts of these residuals increase reliability and enable robust position corrections, improving end-user navigation performance.
+## Problem Statement
+Global Navigation Satellite System (GNSS) residual errors lead to positioning inaccuracies. This project addresses forecasting these residuals' temporal evolution for robust correction, improving navigation reliability.
 
-Proposed Solution
+## Proposed Solution
+- **Data Smoothing and Temporal Regularization:** Converts erratic satellite error measurements into uniformly spaced, standardized input.
+- **Feature Engineering:** Uses technical indicators like SMA, EMA, ATR, Bollinger Bands, RSI, and MACD to capture trends, momentum, and volatility.
+- **Ensemble Modeling:** Employs CatBoost, XGBoost, and LightGBM for multi-output (x, y, z, clock) residual prediction.
+- **Evaluation:** Includes RMSE, Whiteness checks, and visual validation for accuracy and noise properties.
 
-Key Features:
-Reliable Data Transformation: Irregular GNSS error data is converted into smooth, uniform time series.
-Intelligent Pattern Detection: ML models automatically recognize trends, shifts, and volatile regimes in error time series.
-Advanced Prediction Engines: Uses ensemble learning (XGBoost, CatBoost, LightGBM) for multi-dimensional error prediction.
-Flexible, Future-Proof Architecture: Easily integrates new features, learning strategies, and continuous model improvement
+## Model Architecture
+### Data Pipeline
+- Data Ingestion and Cleaning
+- Temporal Interpolation for uniformity
+- Feature Extraction with advanced indicators
+- Train-Test splitting based on time
 
-Core Objective
-The main objective is to forecast GNSS-residual error components (x, y, z, clock) with high temporal accuracy and transform raw, erratic observations into predictable, nearly white-noise sequences—enabling robust error correction up to 24 hours ahead
+### Models
+- Multioutput regression for residual dimensions
+- Ensemble boosting methods for robustness
+- Optional LSTM/GRU layers for nonlinear temporal patterns
 
-Model Architecture
+## Results Visualizations
+Below are key model visualizations:
 
-Data Pipeline
-Data Ingestion & Preparation: Collect and preprocess satellite error data.
-Temporal Regularization: Convert erratic series into uniformly spaced samples using interpolation.
-Cleaning & Normalization: Remove missing values, apply scaling to stabilize training.
-
-
-![ATR vs X Error](plots/x_error_vs_ATR_x_error.png)
-![Train vs Test vs XGBoost](plots/Train_vs_Test_vs_XG_Boost.png)
-![RSI Analysis](plots/x_error_vs_RSI_x_error.png)
-
+![X Error vs ATR](images/x_error_vs_ATR_x_error.png)
+![Train vs Test vs XGBoost Prediction](images/Train_vs_Test_vs_XG_Boost.png)
+![X Error vs RSI](images/x_error_vs_RSI_x_error.png)
+![X Error vs Bollinger Bands](images/x_error_vs_BB_upper_BB_lower.png)
+![X Error vs MACD](images/x_error_vs_MACD_x_error.png)
+![X Error vs SMA](images/x_error_vs_SMA_x_error.png)
+![X Error vs EMA](images/x_error_vs_EMA_x_error.png)
